@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Yummy</string>
+
+    <string name="already_have_account">Already have an account? <u><font color="#FF5722">Login</font></u></string>
+    <string name="donot_have_an_account">Do not have an account? <u><font color="#FF5722"> Register here</font></u></string>
+
+
+</resources>
