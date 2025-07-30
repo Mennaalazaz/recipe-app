@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+   >
+
+
+    <ImageView
+        android:id="@+id/image"
+        android:layout_width="419dp"
+        android:layout_height="309dp"
+        android:layout_marginStart="4dp"
+        android:src="@drawable/login_register"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="-17dp"
+        tools:ignore="MissingConstraints" />
+
+    <ImageView
+        android:id="@+id/chef_img"
+        android:layout_width="125dp"
+        android:layout_height="139dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="36dp"
+        android:src="@drawable/chef"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/image" />
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="177dp"
+        android:layout_height="68dp"
+        android:layout_marginStart="36dp"
+        android:fontFamily="serif"
+        android:gravity="center"
+        android:text="Welcome, Chef"
+        android:textColor="@color/md_theme_errorContainer_mediumContrast"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="@id/chef_img"
+        app:layout_constraintStart_toEndOf="@id/chef_img"
+        app:layout_constraintTop_toTopOf="@id/chef_img"
+        app:layout_constraintVertical_bias="0.492" />
+
+    <TextView
+        android:id="@+id/logintext"
+        android:layout_width="190dp"
+        android:layout_height="72dp"
+        android:layout_marginTop="76dp"
+        android:background="@drawable/login_frame"
+        android:gravity="center"
+        android:text="Login"
+        android:textColor="@color/md_theme_background_mediumContrast"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/textView"
+        app:layout_constraintHorizontal_bias="0.601"
+        app:layout_constraintStart_toStartOf="@+id/chef_img"
+        app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+    <TextView
+        android:id="@+id/registertext"
+        android:layout_width="197dp"
+        android:layout_height="70dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="48dp"
+        android:background="@drawable/register_frame"
+        android:gravity="center"
+        android:text="Register"
+        android:textColor="@color/md_theme_background_mediumContrast"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/logintext"
+        app:layout_constraintStart_toStartOf="@+id/logintext"
+        app:layout_constraintTop_toBottomOf="@+id/logintext" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

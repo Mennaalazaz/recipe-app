@@ -1,0 +1,29 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="32dp"
+    android:height="32dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- دائرة العدسة -->
+    <path
+        android:fillColor="#FF4081"
+        android:pathData="M9.5,2C5.36,2 2,5.36 2,9.5S5.36,17 9.5,17
+            c1.84,0 3.52,-0.63 4.86,-1.7l5.68,5.68c0.39,0.39 1.02,0.39 1.41,0
+            0.39,-0.39 0.39,-1.02 0,-1.41l-5.68,-5.68C16.37,13.02 17,11.34 17,9.5
+            C17,5.36 13.64,2 9.5,2zM9.5,4C12.54,4 15,6.46 15,9.5S12.54,15 9.5,15
+            4,12.54 4,9.5 6.46,4 9.5,4z" />
+
+    <!-- لمعة العدسة -->
+    <path
+        android:fillColor="#FFFFFF"
+        android:fillAlpha="0.4"
+        android:pathData="M6.5,5.5c1,-1 4,-1.5 5,-0.5
+            c0.3,0.3 -2,2 -3.5,2.5c-1.2,0.4 -2.5,0 -1.5,-2z" />
+
+    <!-- مقبض العدسة -->
+    <path
+        android:fillColor="#D81B60"
+        android:pathData="M13.5,13.5l5,5c0.39,0.39 1.02,0.39 1.41,0
+            0.39,-0.39 0.39,-1.02 0,-1.41l-5,-5z" />
+</vector>
+

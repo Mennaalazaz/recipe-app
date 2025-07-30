@@ -2,24 +2,37 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/yummy_logo_round"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/yummy_logo_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.RecipeProject">
+        android:theme="@style/Recipeapp">
+
+        <!-- MainActivity لو مش محتاجاه خالص بنشيله -->
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.recipeapp.MainActivity"
+            tools:node="remove" />
+
+        <!-- AuthActivity هي Launcher -->
+        <activity
+            android:name=".AuthActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-    </application>
 
+        <!-- RecipeActivity للشاشة الرئيسية بعد تسجيل الدخول -->
+        <activity
+            android:name=".RecipeActivity"
+            android:exported="false" />
+
+    </application>
 </manifest>

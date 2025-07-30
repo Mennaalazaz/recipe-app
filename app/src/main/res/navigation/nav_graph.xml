@@ -1,21 +1,78 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/splashFragment">
+
+    <!-- Splash Fragment -->
     <fragment
-        android:id="@+id/homeFragment"
-        android:name="com.example.recipeproject.HomeFragment"
-        android:label="Home">
+        android:id="@+id/splashFragment"
+        android:name="com.example.recipeapp.ui.SplashFragment"
+        android:label="SplashFragment">
         <action
-            android:id="@+id/action_home_to_recipeDetail"
-            app:destination="@id/recipeDetailFragment"
-            app:enterAnim="@anim/slide_in_right"
-            app:exitAnim="@anim/slide_out_left" />
+            android:id="@+id/action_splashFragment_to_loginOrRegisterFragment"
+            app:destination="@id/loginOrRegisterFragment" />
+        <action
+            android:id="@+id/action_splashFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
     </fragment>
 
+
+    <!-- Login Or Register -->
+    <fragment
+        android:id="@+id/loginOrRegisterFragment"
+        android:name="com.example.recipeapp.ui.LoginOrRegisterFragment"
+        android:label="LoginOrRegisterFragment">
+        <action
+            android:id="@+id/action_loginOrRegisterFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_loginOrRegisterFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+    </fragment>
+
+    <!-- Login Fragment -->
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.recipeapp.ui.LoginFragment"
+        android:label="LoginFragment">
+        <action
+            android:id="@+id/action_loginFragment_to_registerFragment"
+            app:destination="@id/registerFragment" />
+        <!-- لو محتاجة تنتقلي للهوم بعد تسجيل الدخول -->
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <!-- Register Fragment -->
+    <fragment
+        android:id="@+id/registerFragment"
+        android:name="com.example.recipeapp.ui.RegisterFragment"
+        android:label="RegisterFragment">
+        <action
+            android:id="@+id/action_registerFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <!-- ممكن كمان مباشرة للهوم -->
+        <action
+            android:id="@+id/action_registerFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+
+    <!-- Home Fragment -->
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.recipeapp.ui.HomeFragment"
+        android:label="HomeFragment">
+        <action
+            android:id="@+id/action_homeFragment_to_recipeDetailFragment"
+            app:destination="@id/recipeDetailFragment" />
+    </fragment>
+
+    <!-- Recipe Detail Fragment -->
     <fragment
         android:id="@+id/recipeDetailFragment"
-        android:name="com.example.recipeproject.RecipeDetailFragment"
+        android:name="com.example.recipeapp.ui.RecipeDetailFragment"
         android:label="Recipe Detail">
         <argument
             android:name="mealId"
