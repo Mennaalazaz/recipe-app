@@ -69,8 +69,11 @@ class RecipeDetailFragment : Fragment() {
         val recipe = FavoriteRecipe(
             recipeId = recipeId ?: "",
             title = title ?: "",
-            imageUrl = imageUrl ?: ""
+            imageUrl = imageUrl ?: "",
+            instructions = instructions ?: "", // 🆕 حفظ الوصف
+            videoUrl = videoUrl
         )
+
 
         lifecycleScope.launch {
             val exists = viewModel.exists(recipe.recipeId)

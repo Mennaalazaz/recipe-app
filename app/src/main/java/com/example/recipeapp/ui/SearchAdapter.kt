@@ -22,7 +22,11 @@ class SearchAdapter(
                 .into(binding.ivImage)
 
             binding.root.setOnClickListener {
-                onItemClick(recipe)
+                // نمرر كل البيانات بما فيها رابط الفيديو
+                val updatedRecipe = recipe.copy(
+                    strYoutube = recipe.strYoutube ?: ""
+                )
+                onItemClick(updatedRecipe)
             }
         }
     }

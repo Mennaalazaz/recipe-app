@@ -35,9 +35,13 @@ class FavoriteAdapter(
                 onDeleteClick(recipe)
             }
 
-            // 👈 فتح التفاصيل عند الضغط على العنصر
+            // 👈 فتح التفاصيل عند الضغط على العنصر + إرسال رابط الفيديو
             binding.root.setOnClickListener {
-                onItemClick(recipe)
+                // هنا هنمرر الفيديو مع الكائن نفسه
+                val recipeWithVideo = recipe.copy(
+                    videoUrl = recipe.videoUrl // لو محفوظه في الفيفورت
+                )
+                onItemClick(recipeWithVideo)
             }
         }
     }

@@ -35,6 +35,7 @@ class SearchFragment : Fragment() {
                 putString("strMeal", recipe.strMeal)
                 putString("strMealThumb", recipe.strMealThumb)
                 putString("strInstructions", recipe.strInstructions ?: "No instructions available")
+                putString("strYoutube", recipe.strYoutube ?: "")
             }
 
             val detailFragment = RecipeDetailFragment().apply {

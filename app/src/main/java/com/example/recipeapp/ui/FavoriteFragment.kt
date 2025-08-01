@@ -40,7 +40,9 @@ class FavoriteFragment : Fragment() {
                     putString("idMeal", recipe.recipeId)
                     putString("strMeal", recipe.title)
                     putString("strMealThumb", recipe.imageUrl)
-                    putString("strInstructions", "No instructions available")
+                    putString("strInstructions", recipe.instructions ?: "No instructions available")
+                    putString("strYoutube", recipe.videoUrl ?: "")
+
                 }
                 val detailFragment = RecipeDetailFragment().apply {
                     arguments = bundle
