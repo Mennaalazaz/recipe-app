@@ -1,9 +1,10 @@
 package com.example.recipeapp.ui
 
+import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
+import android.view.*
+import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,6 +21,11 @@ class HomeFragment : Fragment() {
     private lateinit var viewModel: RecipeVM
     private lateinit var adapter: RecipeAdapter
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setHasOptionsMenu(true) // تفعيل المنيو
+    }
+
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -31,18 +37,22 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        // إعداد الـ Adapter مع الانتقال إلى RecipeDetailFragment
+        // ربط التولبار
+        (requireActivity() as AppCompatActivity).setSupportActionBar(binding.toolbar)
+
+        // إعداد الـ Adapter
         adapter = RecipeAdapter { meal ->
             val bundle = Bundle().apply {
                 putString("idMeal", meal.idMeal)
-                putString("strMeal", meal.strMeal)          // العنوان
-                putString("strMealThumb", meal.strMealThumb) // الصورة
-            }
+                putString("strMeal", meal.strMeal)
+                putString("strMealThumb", meal.strMealThumb)
+                putString("strInstructions", meal.strInstructions) // ✅ أضفنا الوصف
+                putString("strYoutube", meal.strYoutube)
 
+            }
             val detailFragment = RecipeDetailFragment().apply {
                 arguments = bundle
             }
-
             parentFragmentManager.beginTransaction()
                 .replace(R.id.fragment_container, detailFragment)
                 .addToBackStack(null)
@@ -52,10 +62,25 @@ class HomeFragment : Fragment() {
         binding.recyclerView.layoutManager = LinearLayoutManager(requireContext())
         binding.recyclerView.adapter = adapter
 
-        // إعداد الـ ViewModel
+        // ViewModel
         viewModel = ViewModelProvider(this)[RecipeVM::class.java]
         viewModel.meals.observe(viewLifecycleOwner) { meals ->
             adapter.submitList(meals)
+        }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu, inflater: MenuInflater) {
+        inflater.inflate(R.menu.main_menu, menu)
+        super.onCreateOptionsMenu(menu, inflater)
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        return when (item.itemId) {
+            R.id.menu_about_creator -> {
+                startActivity(Intent(requireContext(), CreatorsActivity::class.java))
+                true
+            }
+            else -> super.onOptionsItemSelected(item)
         }
     }
 

@@ -34,5 +34,8 @@
             android:name=".RecipeActivity"
             android:exported="false" />
 
+        <activity android:name=".ui.CreatorsActivity" />
+
+
     </application>
 </manifest>

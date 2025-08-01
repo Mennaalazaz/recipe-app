@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
     app:startDestination="@id/splashFragment">
 
@@ -16,7 +17,6 @@
             android:id="@+id/action_splashFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
     </fragment>
-
 
     <!-- Login Or Register -->
     <fragment
@@ -39,7 +39,6 @@
         <action
             android:id="@+id/action_loginFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
-        <!-- لو محتاجة تنتقلي للهوم بعد تسجيل الدخول -->
         <action
             android:id="@+id/action_loginFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -53,7 +52,6 @@
         <action
             android:id="@+id/action_registerFragment_to_loginFragment"
             app:destination="@id/loginFragment" />
-        <!-- ممكن كمان مباشرة للهوم -->
         <action
             android:id="@+id/action_registerFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
@@ -67,6 +65,10 @@
         <action
             android:id="@+id/action_homeFragment_to_recipeDetailFragment"
             app:destination="@id/recipeDetailFragment" />
+        <!-- زر About the Creator -->
+        <action
+            android:id="@+id/action_homeFragment_to_creatorsFragment"
+            app:destination="@id/creatorsFragment" />
     </fragment>
 
     <!-- Recipe Detail Fragment -->
@@ -74,9 +76,15 @@
         android:id="@+id/recipeDetailFragment"
         android:name="com.example.recipeapp.ui.RecipeDetailFragment"
         android:label="Recipe Detail">
-        <argument
-            android:name="mealId"
-            app:argType="string" />
+
     </fragment>
 
+    <!-- Creators Fragment (About the Creator Screen) -->
+
+
+    <fragment
+        android:id="@+id/creatorsFragment"
+        android:name="com.example.recipeapp.ui.CreatorsFragment"
+        android:label="CreatorsFragment"
+        tools:layout="@layout/fragment_creators" />
 </navigation>

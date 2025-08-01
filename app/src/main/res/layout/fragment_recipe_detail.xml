@@ -44,18 +44,29 @@
             android:gravity="center"
             android:layout_marginTop="8dp" />
 
-        <!-- الوصف -->
+        <!-- الوصف المختصر -->
         <TextView
-            android:id="@+id/tvInstructions"
+            android:id="@+id/tvDetails"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:paddingTop="8dp"
             android:textSize="16sp"
             android:textColor="@android:color/black"
-            android:text="Recipe instructions will appear here"
-            android:layout_marginBottom="16dp" />
+            android:text="Recipe details will appear here"
+            android:layout_marginBottom="8dp" />
+
+        <!-- زر التوسيع -->
 
         <!-- قلب المفضلة داخل CardView -->
+
+        <Button
+            android:id="@+id/btnExpand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginBottom="16dp"
+            android:text="Show More" />
+
         <androidx.cardview.widget.CardView
             android:layout_width="70dp"
             android:layout_height="70dp"
@@ -71,11 +82,19 @@
                 android:id="@+id/btnFavorite"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:src="@drawable/ic_favorite_border"
                 android:background="?attr/selectableItemBackgroundBorderless"
                 android:contentDescription="Favorite"
+                android:src="@drawable/ic_favorite_border"
                 app:tint="@color/md_theme_errorContainer_highContrast" />
         </androidx.cardview.widget.CardView>
+
+        <Button
+            android:id="@+id/btnPlayVideo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="▶ Play Video" />
+
 
     </LinearLayout>
 </ScrollView>

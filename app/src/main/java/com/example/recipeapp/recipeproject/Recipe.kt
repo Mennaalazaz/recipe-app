@@ -6,7 +6,8 @@ data class Recipe(
     val strCategory : String,
     val strArea : String,
     val strMealThumb : String,
-    val strInstructions : String
+    val strInstructions : String,
+    val strYoutube: String?
 )
 
 data class RecipeResponse(
