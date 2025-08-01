@@ -69,6 +69,10 @@
         <action
             android:id="@+id/action_homeFragment_to_creatorsFragment"
             app:destination="@id/creatorsFragment" />
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <!-- Recipe Detail Fragment -->
@@ -87,4 +91,7 @@
         android:name="com.example.recipeapp.ui.CreatorsFragment"
         android:label="CreatorsFragment"
         tools:layout="@layout/fragment_creators" />
+
+
+
 </navigation>
