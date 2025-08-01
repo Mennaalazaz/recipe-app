@@ -69,6 +69,11 @@
         <action
             android:id="@+id/action_homeFragment_to_creatorsFragment"
             app:destination="@id/creatorsFragment" />
+
+        <action
+            android:id="@+id/action_homeFragment_to_loginFragment"
+            app:destination="@id/loginFragment"
+            app:popUpToInclusive="true"/>
     </fragment>
 
     <!-- Recipe Detail Fragment -->

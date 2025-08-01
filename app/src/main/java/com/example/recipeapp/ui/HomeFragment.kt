@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.recipeapp.AuthActivity
 import com.example.recipeapp.R
 import com.example.recipeapp.databinding.FragmentHomeBinding
 import com.example.recipeapp.recipeproject.RecipeAdapter
@@ -80,6 +81,28 @@ class HomeFragment : Fragment() {
                 startActivity(Intent(requireContext(), CreatorsActivity::class.java))
                 true
             }
+
+
+            R.id.action_sign_out -> {
+                Toast.makeText(requireContext(), "Sign Out", Toast.LENGTH_SHORT).show()
+
+                val sharedPref = requireActivity().getSharedPreferences("user_prefs", 0)
+                with(sharedPref.edit()) {
+                    remove("user_email")
+                    putBoolean("is_logged_in", false)
+                    apply()
+                }
+
+                // Go back to AuthActivity
+                val intent = Intent(requireContext(), AuthActivity::class.java) // whatever hosts nav_graph
+                intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                startActivity(intent)
+                requireActivity().finish()
+
+                true
+            }
+
+
             else -> super.onOptionsItemSelected(item)
         }
     }
