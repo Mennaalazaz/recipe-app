@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Recipeapp</string>
+    <string name="app_name">Yummy</string>
     <string name="already_have_account">Already have an account? <u><font color="#FF0000">Login</font></u> </string>
     <string name="dont_have_account">Do not have an account? <u><font color="#FF0000">Register</font></u> </string>
 
