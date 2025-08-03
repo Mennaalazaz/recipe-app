@@ -65,7 +65,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Nourhan Tark"
+                android:text=" Nourhan Tarek"
                 android:textSize="18sp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="12dp" />
@@ -83,7 +83,7 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text=" Hadir "
+                android:text=" Hadir Mohammed "
                 android:textSize="18sp"
                 android:layout_gravity="center_vertical"
                 android:layout_marginStart="12dp" />
